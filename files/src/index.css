@@ -73,3 +73,13 @@ body {
 }
 
 /* End Meme Section*/
+
+.image-container{
+  border: 1px solid red;
+  width: 90%;
+  margin: auto;
+}
+.image-container img{
+  max-width: 100%;
+  margin: auto;
+}
