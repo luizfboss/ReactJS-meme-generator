@@ -20,6 +20,14 @@ function Main(){
         }))
     }
 
+    function handleChange(event){
+        const {name, value} = event.target
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
+    }
+
     return (
       <section className="meme-container">
         <div className="meme-element-container">
@@ -27,11 +35,17 @@ function Main(){
                 <input 
                     type="text"
                     placeholder="Top text here" 
+                    name="topText"
+                    value={meme.topText}
+                    onChange={handleChange}
                 />
 
                 <input 
                     type="text"
                     placeholder="Bottom text here" 
+                    name="bottomText"
+                    value={meme.bottomText}
+                    onChange={handleChange}
                 />
             </div>
 
@@ -42,6 +56,8 @@ function Main(){
 
         <div className="image-container">
             <img src={meme.randomImage} className="meme-image" />
+            <h2 className="topText top">{meme.topText}</h2>
+            <h2 className="bottomText bottom">{meme.bottomText}</h2>
         </div>
 
       </section>
